@@ -1,25 +1,33 @@
 /**
- * Jquery Mobile McMenu
+ * jQuery Mobile McMenu
  *
  * @author DaVee8k
- * @version 0.13.3
+ * @version 0.13.4
  * @license WTFNMFPL 1.0
  */
 (function ($) {
 	$.fn.mcMenu = function (option) {
 		var self = this;
-		this.widthLimit = option['width'] !== undefined ? option['width'] : false;
-		this.button = option['button'] !== undefined ? option['button'] : false;
+		this.widthLimit = option['width'] !== undefined ? option['width'] : null;
+		this.button = option['button'] !== undefined ? option['button'] : null;
 		this.buttonActive = option['buttonActive'] !== undefined ? option['buttonActive'] : "active";
 		this.clickable = option['clickable'] !== undefined ? option['clickable'] : false;
 		this.list = option['list'] !== undefined ? option['list'] : 'ul';
-		this.subMenu = option['subMenu'] !== undefined ? option['subMenu'] : false;
+		this.subMenu = option['subMenu'] !== undefined ? option['subMenu'] : null;
 		this.duration = 300;
 
+		/**
+		 * Check if menu is in hamburger mode
+		 * @returns {Boolean}
+		 */
 		this.isMobile = function () {
 			return !this.widthLimit || ($(window).outerWidth(true) || window.outerWidth) <= this.widthLimit;
 		};
 
+		/**
+		 * Add submenu expand button
+		 * @param {String} parent
+		 */
 		this.addSubmenu = function (parent) {
 			$(parent).append('<span class="menu-mobile-expand">+</span>');
 			if ($(parent).children("a").length > 0) {
@@ -34,6 +42,10 @@
 			}
 		};
 
+		/**
+		 * Expand menu
+		 * @param {String} parent
+		 */
 		this.toggleMenu = function (parent) {
 			$(parent).children(self.list).stop(true).slideToggle(self.duration, function () {
 				var expander = $(parent).children(".menu-mobile-expand");
@@ -60,7 +72,7 @@
 				var elm = $(self).children(self.list);
 				return $(elm).is(":visible") && !$(elm).is(":animated");
 			});
-		};
+		}
 
 		if (this.button) {
 			$(this.button).click( function () {

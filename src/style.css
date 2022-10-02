@@ -10,8 +10,15 @@ nav {
 	vertical-align: top;
 }
 
+.menu-icon {
+	display: block;
+	cursor: pointer;
+	font-size: 40px;
+	line-height: 50px;
+	text-align: center;
+}
 .menu-mobile-expand {
-	display: none;
+	display: block;
 	position: absolute;
 	top: 0;
 	right: 0;
@@ -24,14 +31,13 @@ nav {
 }
 
 /*** always visible ***/
-#minmenu {
+#menu-1 {
 	position: relative;
+	z-index: 10;
 	width: 50px;
 	height: 50px;
-	background: #999;
 }
-
-#minmenu ul {
+#menu-1 ul {
 	display: none;
 	list-style: none;
 	padding: 0;
@@ -39,71 +45,53 @@ nav {
 	line-height: 20px;
 	min-width: 200px;
 }
-#minmenu > ul {
+#menu-1 > ul {
 	position: absolute;
 	top: 50px;
 }
-
-#minmenu li {
+#menu-1 li {
 	position: relative;
 	width: 100%;
 	white-space: nowrap;
-	background: #ccc;
+	background: #333;
 }
-
-#minmenu a {
+#menu-1 a {
 	display: block;
 	padding: 5px 20px 5px 5px;
 }
-
-#minmenu.nojs:hover ul {
-	display: block;
-}
-
-#minmenu .menu-mobile-expand {
+#menu-1.nojs:hover ul {
 	display: block;
 }
 
 /*** media queries ***/
 @media
 screen and (max-width: 900px) {
-	#menu {
+	#menu-2 {
 		position: relative;
+		z-index: 9;
 		width: 50px;
 		height: 50px;
-		background: red;
 	}
-
-	#menu ul {
-		display: none;
+	#menu-2 ul {
 		list-style: none;
 		padding: 0;
 		margin: 0;
 		line-height: 20px;
 		min-width: 200px;
 	}
-	#menu > ul {
+	#menu-2 > ul {
+		display: none;
 		position: absolute;
 		top: 50px;
 	}
-
-	#menu li {
+	#menu-2 li {
 		position: relative;
 		width: 100%;
 		white-space: nowrap;
-		background: #ccc;
+		background: #333;
 	}
-
-	#menu a {
+	#menu-2 a {
 		display: block;
 		padding: 5px 20px 5px 5px;
-	}
-
-	#menu.nojs:hover ul {
-		display: block;
-	}
-
-	.menu-mobile-expand {
-		display: block;
 	}
 }
