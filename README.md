@@ -5,6 +5,10 @@
 Simple jQuery hamburger menu for small screens,
 in case you don't want or can't to use CSS solution.
 
+## Browser support
+
+Internet Explorer 8 and (almost) anything newer ;)
+
 ## Options
 
 Name        | Type       | Default    | Description
