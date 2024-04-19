@@ -3,7 +3,7 @@
  *
  * @author DaVee8k
  * @version 0.13.4
- * @license WTFNMFPL 1.0
+ * @license https://unlicense.org/
  */
 (function ($) {
 	$.fn.mcMenu = function (option) {
